@@ -23,8 +23,9 @@ class DoctorsHelper(val application: MyApplication,
                 (ctx as DoctorsActivity).initRecyclerView()
             } else {
                 ctx?.let{
-                    mView?.let{
-                        Snackbar.make(it, it.resources.getString(R.string.doctors_fetch_content_error), Snackbar.LENGTH_LONG).show()}}
+                    showDialog(it.resources.getString(R.string.doctors_header),
+                                        it.resources.getString(R.string.doctors_fetch_content_error))
+                }
             }
         }
     }

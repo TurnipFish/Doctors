@@ -164,51 +164,9 @@ object RestApi {
                     })
             }
         } catch (e: Exception) {
-            Timber.e("Fail to subscribe to flowable with message:  <%s> ", e.printStackTrace())
+            Timber.e("Fail to subscribe to Observable with message:  <%s> ", e.printStackTrace())
             sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_ERROR)
         }
-
-    }
-
-    /**
-     * Subscriber to the Doctors observable - derive LastKey
-     * @param application
-     * @param mHandler - Handler to the caller
-     * @Param observable - emitter of ApiDoctor objects
-     */
-    fun subscriberToLastKeyObservable(
-        application: MyApplication,
-        mHandler: Handler,
-        observable: Observable<DoctorsSearch>
-    ) {
-        var disposable: Disposable? = null
-        try {
-            observable?.let {
-                disposable = observable.subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .doOnComplete { }
-                    .subscribeWith(object : DisposableObserver<DoctorsSearch>() {
-
-                        override fun onComplete() {
-                            Timber.i("Authentication process ended! ")
-                        }
-
-                        override fun onNext(doctorsSearch: DoctorsSearch) {
-                            doctorsSearch.getLastKey()
-                                ?.let { MyPreferencesHelper.setLastKey(it, application) }
-                        }
-
-                        override fun onError(e: Throwable) {
-                            Timber.e(
-                                "Fail to subscribe to Observable  with message:  <%s> ", e.message
-                            )
-                        }
-                    })
-            }
-        } catch (e: Exception) {
-            Timber.e("Fail to subscribe to Observable with message:  <%s> ", e.printStackTrace())
-        }
-
     }
 
     /**

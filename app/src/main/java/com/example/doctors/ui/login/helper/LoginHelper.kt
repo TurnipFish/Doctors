@@ -27,8 +27,9 @@ class LoginHelper(val downloader: ITokenDownloaderService,
 
             } else {
                 ctx?.let{
-                    mView?.let{
-                    Snackbar.make(it, it.resources.getString(R.string.auth_login_error), Snackbar.LENGTH_LONG).show()}}
+                    showDialog(it.resources.getString(R.string.auth_header),
+                        it.resources.getString(R.string.auth_login_error))
+                }
             }
         }
     }

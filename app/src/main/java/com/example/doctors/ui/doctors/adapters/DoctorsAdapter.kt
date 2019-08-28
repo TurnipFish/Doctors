@@ -54,15 +54,6 @@ class DoctorsAdapter  (val context: Context,  val data: ArrayList<Doctor>, val p
             .placeholder(R.drawable.doctor_image_place_holder_300x420)
             .into(doctor_cover)
 
-
-            /*doctor.getImageCache()?.let {
-                val imgFile = File("${context.filesDir}/$it")
-                if (imgFile.exists()) {
-                    val myBitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
-                    doctor_cover.setImageBitmap(myBitmap)
-
-                }
-            }*/
         }
 
         private fun orderTeaserCover(){

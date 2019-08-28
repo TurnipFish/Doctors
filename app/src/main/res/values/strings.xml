@@ -14,7 +14,8 @@
         <string name="doctors.name" tools:ignore="ExtraTranslation">Doctors</string>
         <string name="title_activity_doctors">DoctorsActivity</string>
         <string name="search_topic">Name / Location</string>
-        <string name="doctors.fetch_content_error" tools:ignore="ExtraTranslation">Failed to fetch apiDoctors</string>
+        <string name="doctors.header" tools:ignore="ExtraTranslation">Data Fetching Failed</string>
+        <string name="doctors.fetch_content_error" tools:ignore="ExtraTranslation">Failed to fetch Doctors from API</string>
 
         <!--Custom Dialog-->
         <string name="ok" tools:ignore="ExtraTranslation">Ok</string>

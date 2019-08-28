@@ -37,6 +37,15 @@ open class DataFetchHelper: IDataFetchHelper {
 
     }
 
+    fun showDialog(header: String, msg: String){
+        ctx?.let{
+            val dialog = CustomDialog(ctx!!)
+            dialog.show()
+            dialog.setHeader(header)
+            dialog.setMessage(msg)
+        }
+    }
+
      inline fun<reified  T : Context, reified R : Context> startNewActivity(clazz: Class<R>) {
         ctx?.let{
             val intent = Intent(ctx as T, clazz)
