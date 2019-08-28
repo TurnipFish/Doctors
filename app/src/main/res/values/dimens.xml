@@ -1,0 +1,25 @@
+<resources>
+        <dimen name="fab_margin">16dp</dimen>
+
+        <dimen name="margin_top_large">54dp</dimen>
+        <dimen name="margin_top_bottom_high">24dp</dimen>
+        <dimen name="margin_top_bottom">16dp</dimen>
+        <dimen name="margin_top_bottom_small">8dp</dimen>
+        <dimen name="margin_start_end">16dp</dimen>
+        <dimen name="margin_start_very_large">44dp</dimen>
+        <dimen name="margin_start_end_small">8dp</dimen>
+        <dimen name="dialog_margin_start_end">24dp</dimen>
+        <dimen name="margin_start_end_average">16dp</dimen>
+
+        <dimen name="margin_very_small">4dp</dimen>
+        <!--Text-->
+        <dimen name="textSizeExtraLarge">24sp</dimen>
+        <dimen name="textSizeVeryLarge">20sp</dimen>
+        <dimen name="textSizeLarge">18sp</dimen>
+        <dimen name="textSizeAverage">16sp</dimen>
+
+        <!--General-->
+        <dimen name="search_txt_height">40dp</dimen>
+        <dimen name="max_height_large">88dp</dimen>
+        <dimen name="max_height">48dp</dimen>
+</resources>

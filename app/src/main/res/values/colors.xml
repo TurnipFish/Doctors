@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimaryText">#00A19A</color>
+
+    <!--Other colors-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grayLight">#FAFAFA</color>
+    <color name="register_button_pressed">#58857e</color>
+    <color name="register_button">#006064</color>
+    <color name="register_button_focused">#58857e</color>
+    <color name="dialogBackground">#F5F5F5</color>
+
+</resources>
