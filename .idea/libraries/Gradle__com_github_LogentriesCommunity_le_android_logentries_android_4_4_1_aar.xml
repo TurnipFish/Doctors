@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.LogentriesCommunity:le_android:logentries-android-4.4.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a6fbe5828571d0439b43ddd9c74316e3/le_android-logentries-android-4.4.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a6fbe5828571d0439b43ddd9c74316e3/le_android-logentries-android-4.4.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.LogentriesCommunity/le_android/logentries-android-4.4.1/623d10c0340006ef0dd0c9cf31e0b15874fef7ff/le_android-logentries-android-4.4.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.LogentriesCommunity/le_android/logentries-android-4.4.1/dc09258b782694946dc187ec312a568926515f98/le_android-logentries-android-4.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
