@@ -1,0 +1,203 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+/*apply plugin: 'com.android.library'*/
+/*apply plugin: 'com.jakewharton.butterknife'*/
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+configurations {
+    cleanedAnnotations
+    compile.exclude group: 'org.jetbrains', module: 'annotations'
+}
+kapt {
+    generateStubs = true
+}
+
+
+android {
+    lintOptions {
+        checkReleaseBuilds true
+        abortOnError false
+    }
+    /*signingConfigs {
+        // deprecated
+        debug {
+            keyAlias 'codechallenge_debug'
+            storeFile file(ENTWICKLERKIOSK_STORE_FILE)
+            storePassword ENTWICKLERKIOSK_STORE_PASSWORD
+            keyPassword ENTWICKLERKIOSK_KEY_PASSWORD
+        }
+
+        release {
+            keyAlias 'codechallenge_release'
+            storeFile file(ENTWICKLERKIOSK_STORE_FILE)
+            storePassword ENTWICKLERKIOSK_STORE_PASSWORD
+            keyPassword ENTWICKLERKIOSK_KEY_PASSWORD
+        }
+    }*/
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.example.doctors"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+    }
+    buildTypes {
+        buildTypes {
+            def BOOLEAN = "boolean"
+            def TRUE = "true"
+            def FALSE = "false"
+            def IS_DEBUG_BUILD = "IS_DEBUG_BUILD"
+            def IS_STAGING_BUILD = "IS_STAGING_BUILD"
+
+            debugRelease {
+                debuggable = true
+                testCoverageEnabled = false
+                versionNameSuffix '.debugRelease'
+                minifyEnabled false // Enable Proguard
+                buildConfigField BOOLEAN, IS_DEBUG_BUILD, TRUE
+                buildConfigField BOOLEAN, IS_STAGING_BUILD, FALSE
+                applicationVariants.all { variant ->
+                    appendVersionName(variant)
+                }
+
+             }
+            release {
+                debuggable false
+                minifyEnabled true
+                buildConfigField BOOLEAN, IS_DEBUG_BUILD, FALSE
+                buildConfigField BOOLEAN, IS_STAGING_BUILD, FALSE
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                applicationVariants.all { variant ->
+                    appendVersionName(variant)
+                }
+            }
+            debug {
+                debuggable = true
+                testCoverageEnabled = true
+            }
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    productFlavors {
+    }
+}
+
+realm {
+    kotlinExtensionsEnabled = true
+}
+
+def appendVersionName(variant) {
+    variant.outputs.all { output ->
+        def apkPostfix = ".apk"
+        def apkPrefix = "app-"
+        def code = variant.versionCode
+        def name = variant.versionName
+
+        def replacement = " (" + name + ") " + code + apkPostfix
+
+        if (output.zipAlign) {
+            def file = output.outputFile
+            if (outputFileName.contains(apkPrefix) && !outputFileName.contains(replacement)) {
+                def fileName = outputFileName.replace(apkPostfix, replacement)
+                fileName = fileName.replace(apkPrefix, "") // remove filename prefix
+                outputFileName = new File(fileName)
+            }
+        }
+    }
+}
+
+dependencies {
+    //Kotlin
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+    implementation 'org.jetbrains:annotations-java5:16.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    //Android Support
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha09'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha09'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'com.google.android.material:material:1.1.0-alpha09'
+
+    //retrofit2
+    implementation "com.squareup.retrofit2:retrofit:2.6.1"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.1"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.1.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.6.1"
+
+    //GSON Support - for retrofit and for apollographql
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+
+    //Dagger2
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt 'com.google.dagger:dagger-compiler:2.14.1'
+    implementation 'com.google.dagger:dagger:2.15'
+
+    //Koroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1'
+
+    //MultiDex Library
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // ButterKnife
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    // Timber
+    implementation 'com.jakewharton.timber:timber:4.6.1'
+
+    // Loggentries
+    implementation 'com.github.LogentriesCommunity:le_android:logentries-android-4.4.1'
+
+    //Joda Time
+    //Warning: Use Joda time instead of Java 8, because Java 8 DataAndTime target Api 26 and higher only
+    implementation 'net.danlew:android.joda:2.9.3.1'
+
+    // Custom Fonts
+    implementation 'uk.co.chrisjenx:calligraphy:2.2.0'
+
+    //Testing
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Unit Tests
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0'
+    testImplementation 'org.mockito:mockito-core:2.27.0'
+    testImplementation 'org.mockito:mockito-inline:2.27.0'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+
+}

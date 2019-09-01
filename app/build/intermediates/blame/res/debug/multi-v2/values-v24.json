@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\ProdigaLsON7\\Documents\\Doctors\\Doctors\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\d9f9ec167f6ad41bea3db13859ea20b0\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\3258b534bb344ebf7320e68c358e9c2d\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\696a999920873636ab15f602302fcbd8\\appcompat-1.1.0-rc01\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\f5ef8a4238bb187f052fced08fc89a82\\appcompat-1.1.0-rc01\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

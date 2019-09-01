@@ -2,6 +2,7 @@
 package com.example.doctors.root;
 
 import com.example.doctors.MyApplication;
+import com.example.doctors.model.MyRealmQueries;
 import com.example.doctors.network.ApiModuleForFetchingContent;
 import com.example.doctors.network.ApiModuleForFetchingContent_ProvideApiServiceForDoctorsFactory;
 import com.example.doctors.network.ApiModuleForFetchingContent_ProvideApiServiceForImagesFactory;
@@ -9,12 +10,17 @@ import com.example.doctors.network.ApiModuleForFetchingContent_ProvideApiService
 import com.example.doctors.network.IContentDownloaderService;
 import com.example.doctors.network.IImageDownloaderService;
 import com.example.doctors.network.ITokenDownloaderService;
+import com.example.doctors.network.RestApi;
 import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
 import javax.inject.Provider;
 
 public final class DaggerApplicationComponent implements ApplicationComponent {
   private Provider<MyApplication> provideContextProvider;
+
+  private Provider<RestApi> provideRestApiProvider;
+
+  private Provider<MyRealmQueries> provideMyRealmQueriesProvider;
 
   private Provider<IContentDownloaderService> provideApiServiceForDoctorsProvider;
 
@@ -35,6 +41,12 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
     this.provideContextProvider =
         DoubleCheck.provider(
             ApplicationModule_ProvideContextFactory.create(builder.applicationModule));
+    this.provideRestApiProvider =
+        DoubleCheck.provider(
+            ApplicationModule_ProvideRestApiFactory.create(builder.applicationModule));
+    this.provideMyRealmQueriesProvider =
+        DoubleCheck.provider(
+            ApplicationModule_ProvideMyRealmQueriesFactory.create(builder.applicationModule));
     this.provideApiServiceForDoctorsProvider =
         DoubleCheck.provider(
             ApiModuleForFetchingContent_ProvideApiServiceForDoctorsFactory.create(
@@ -55,6 +67,16 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   @Override
   public MyApplication application() {
     return provideContextProvider.get();
+  }
+
+  @Override
+  public RestApi restApi() {
+    return provideRestApiProvider.get();
+  }
+
+  @Override
+  public MyRealmQueries myRealmQueries() {
+    return provideMyRealmQueriesProvider.get();
   }
 
   @Override

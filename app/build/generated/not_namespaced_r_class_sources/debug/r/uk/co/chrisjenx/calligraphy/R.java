@@ -385,9 +385,9 @@ public final class R {
         public static final int highlight_alpha_material_colored = 0x7f060090;
         public static final int highlight_alpha_material_dark = 0x7f060091;
         public static final int highlight_alpha_material_light = 0x7f060092;
-        public static final int notification_large_icon_height = 0x7f06013b;
-        public static final int notification_large_icon_width = 0x7f06013c;
-        public static final int notification_subtext_size = 0x7f060143;
+        public static final int notification_large_icon_height = 0x7f06013c;
+        public static final int notification_large_icon_width = 0x7f06013d;
+        public static final int notification_subtext_size = 0x7f060144;
     }
     public static final class drawable {
         private drawable() {}
@@ -617,7 +617,7 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f100018;
         public static final int abc_shareactionprovider_share_with_application = 0x7f100019;
         public static final int abc_toolbar_collapse_description = 0x7f10001a;
-        public static final int status_bar_notification_info_overflow = 0x7f100057;
+        public static final int status_bar_notification_info_overflow = 0x7f100058;
     }
     public static final class style {
         private style() {}

@@ -51,7 +51,7 @@ public final class DoctorsAdapter extends androidx.recyclerview.widget.RecyclerV
         super();
     }
     
-    @kotlin.Metadata(mv = {1, 1, 15}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\b\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u001eH\u0002J\u000e\u0010\u001f\u001a\u00020\u001e2\u0006\u0010 \u001a\u00020!R\u0011\u0010\u0007\u001a\u00020\b\u00a2\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u000b\u001a\u00020\f\u00a2\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0011\u001a\u00020\u0012\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0015\u001a\u00020\b\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\nR\u0011\u0010\u0017\u001a\u00020\u0012\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0014R\u0011\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001a\u00a8\u0006\""}, d2 = {"Lcom/example/doctors/ui/doctors/adapters/DoctorsAdapter$DoctorViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "context", "Landroid/content/Context;", "view", "Landroid/view/View;", "(Lcom/example/doctors/ui/doctors/adapters/DoctorsAdapter;Landroid/content/Context;Landroid/view/View;)V", "address", "Landroid/widget/TextView;", "getAddress", "()Landroid/widget/TextView;", "card_view_container", "Landroidx/cardview/widget/CardView;", "getCard_view_container", "()Landroidx/cardview/widget/CardView;", "getContext", "()Landroid/content/Context;", "doctor_cover", "Landroid/widget/ImageView;", "getDoctor_cover", "()Landroid/widget/ImageView;", "name", "getName", "teaser_cover", "getTeaser_cover", "getView", "()Landroid/view/View;", "calculateCardViewPadding", "", "orderTeaserCover", "", "setValues", "doctor", "Lcom/example/doctors/model/Doctor;", "app_debug"})
+    @kotlin.Metadata(mv = {1, 1, 15}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\b\u0010\u001b\u001a\u00020\u001cH\u0002J\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u001eH\u0002J\b\u0010 \u001a\u00020!H\u0002J\u0012\u0010\"\u001a\u00020\u001e2\b\u0010\u0007\u001a\u0004\u0018\u00010\u001eH\u0002J\u000e\u0010#\u001a\u00020!2\u0006\u0010$\u001a\u00020%R\u0011\u0010\u0007\u001a\u00020\b\u00a2\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u000b\u001a\u00020\f\u00a2\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0011\u001a\u00020\u0012\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0015\u001a\u00020\b\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\nR\u0011\u0010\u0017\u001a\u00020\u0012\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0014R\u0011\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001a\u00a8\u0006&"}, d2 = {"Lcom/example/doctors/ui/doctors/adapters/DoctorsAdapter$DoctorViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "context", "Landroid/content/Context;", "view", "Landroid/view/View;", "(Lcom/example/doctors/ui/doctors/adapters/DoctorsAdapter;Landroid/content/Context;Landroid/view/View;)V", "address", "Landroid/widget/TextView;", "getAddress", "()Landroid/widget/TextView;", "card_view_container", "Landroidx/cardview/widget/CardView;", "getCard_view_container", "()Landroidx/cardview/widget/CardView;", "getContext", "()Landroid/content/Context;", "doctor_cover", "Landroid/widget/ImageView;", "getDoctor_cover", "()Landroid/widget/ImageView;", "name", "getName", "teaser_cover", "getTeaser_cover", "getView", "()Landroid/view/View;", "calculateCardViewPadding", "", "findFirstSpace", "", "tmpStr", "orderTeaserCover", "", "setAddressText", "setValues", "doctor", "Lcom/example/doctors/model/Doctor;", "app_debug"})
     public final class DoctorViewHolder extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
         @org.jetbrains.annotations.NotNull()
         private final androidx.cardview.widget.CardView card_view_container = null;
@@ -102,6 +102,24 @@ public final class DoctorsAdapter extends androidx.recyclerview.widget.RecyclerV
         
         private final double calculateCardViewPadding() {
             return 0.0;
+        }
+        
+        /**
+         * derive a two lines string at most
+         * @param address - abstract string
+         * @return a string ending with a full word
+         */
+        private final java.lang.String setAddressText(java.lang.String address) {
+            return null;
+        }
+        
+        /**
+         * locate the first space to prevent fragments of words
+         * @param tmpStr - input string
+         * @return a string ending with a full word
+         */
+        private final java.lang.String findFirstSpace(java.lang.String tmpStr) {
+            return null;
         }
         
         @org.jetbrains.annotations.NotNull()

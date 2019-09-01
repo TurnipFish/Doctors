@@ -1182,6 +1182,7 @@ dimen margin_start_very_large
 dimen margin_top_bottom
 dimen margin_top_bottom_high
 dimen margin_top_bottom_small
+dimen margin_top_extra_large
 dimen margin_top_large
 dimen margin_very_small
 dimen material_text_view_test_line_height
@@ -2604,6 +2605,7 @@ string mtrl_picker_text_input_date_format
 string mtrl_picker_text_input_date_hint
 string mtrl_picker_text_input_date_range_end_hint
 string mtrl_picker_text_input_date_range_start_hint
+string network_offline
 string ok
 string password_toggle_content_description
 string path_password_eye

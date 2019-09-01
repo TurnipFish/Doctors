@@ -4,24 +4,7 @@
             "outputFile": "C:\\Users\\ProdigaLsON7\\Documents\\Doctors\\Doctors\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\2fb47fe6bc26427288afefb7d8e483df\\core-1.1.0-rc02\\res\\values-hu\\values-hu.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "110",
-                        "startColumns": "4",
-                        "startOffsets": "8238",
-                        "endColumns": "100",
-                        "endOffsets": "8334"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\696a999920873636ab15f602302fcbd8\\appcompat-1.1.0-rc01\\res\\values-hu\\values-hu.xml",
+                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\f5ef8a4238bb187f052fced08fc89a82\\appcompat-1.1.0-rc01\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\9edd6c002716cc647e71a710859f57e7\\jetified-android.joda-2.9.3.1\\res\\values-hu\\values-hu.xml",
+                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\c9a565c2033cfa2dd6c92d6ac3e99c98\\jetified-android.joda-2.9.3.1\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2,6,10,14,18,22,26,30,34,38,42,46,50,54,58,62,66,70,74,78,79,80,81",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -54,6 +37,23 @@
                         "endLines": "5,9,13,17,21,25,29,33,37,41,45,49,53,57,61,65,69,73,77,105,106,107,108",
                         "endColumns": "14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,65,133,124,150",
                         "endOffsets": "353,612,874,1147,1397,1649,1902,2166,2408,2654,2910,3156,3407,3663,3929,4171,4416,4663,4920,7740,7874,7999,8150"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ProdigaLsON7\\.gradle\\caches\\transforms-2\\files-2.1\\3ba6b8543154370bf8af2b567ad021b3\\core-1.1.0-rc02\\res\\values-hu\\values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "110",
+                        "startColumns": "4",
+                        "startOffsets": "8238",
+                        "endColumns": "100",
+                        "endOffsets": "8334"
                     }
                 }
             ]

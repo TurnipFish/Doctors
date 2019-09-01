@@ -22,7 +22,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.doctors.ui.doctors.DoctorsActivity" >
+        <activity
+            android:name="com.example.doctors.ui.doctors.DoctorsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
+            android:resizeableActivity="true"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:name="com.example.doctors.ui.login.LoginActivity"
