@@ -1,5 +1,6 @@
 package com.example.doctors.ui.login
 
+import android.os.Handler
 import com.example.doctors.MyApplication
 import com.example.doctors.network.ITokenDownloaderService
 import com.example.doctors.network.RestApi
@@ -25,9 +26,16 @@ class LoginModule() {
 
     @LoginScope
     @Provides
+    fun providesHandler(): Handler{
+        return Handler()
+    }
+
+    @LoginScope
+    @Provides
     fun provideLoginHelper(downloader: ITokenDownloaderService,
                            application: MyApplication,
-                           restApi: RestApi) : LoginHelper {
-        return LoginHelper(downloader, application, restApi)
+                           restApi: RestApi,
+                           mHandler: Handler) : LoginHelper {
+        return LoginHelper(downloader, application, restApi, mHandler)
     }
 }

@@ -18,7 +18,7 @@ interface DoctorsMVP {
     }
 
     interface Presenter {
-        fun setPresenterView(view : View)
+        fun setPresenterView(view: DoctorsMVP.DoctorsView)
         fun deriveSearchOptions(searchText: String): List<String>
         fun fetchAllDoctors(): RealmResults<Doctor>?
         fun clearDoctors()
@@ -26,6 +26,6 @@ interface DoctorsMVP {
 
     interface Model {
         fun fetchAllDoctors(): RealmResults<Doctor>?
-        fun clearDoctors()
+        fun clearDoctors(): Boolean
     }
 }

@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.view.View
 import androidx.fragment.app.FragmentActivity
+import com.example.doctors.R
 import com.example.doctors.ui.doctors.DoctorsActivity
 import com.example.doctors.ui.doctors.DoctorsActivity_MembersInjector
+import com.example.doctors.ui.login.LoginActivity
 import com.example.doctors.util.data.MyContentDataSource
 
 open class DataFetchHelper: IDataFetchHelper {

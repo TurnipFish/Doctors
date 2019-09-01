@@ -5,8 +5,12 @@ import com.example.doctors.model.Doctor
 import com.example.doctors.util.data.MyContentDataSource
 import io.realm.RealmResults
 
+
 class DoctorsPresenter(val doctorsModel: DoctorsModel): DoctorsMVP.Presenter {
-    override fun setPresenterView(view: View) {
+
+    var view: DoctorsMVP.DoctorsView? = null
+    override fun setPresenterView(view: DoctorsMVP.DoctorsView) {
+        this.view = view
     }
 
     override fun deriveSearchOptions(searchText: String): List<String>{

@@ -2,17 +2,15 @@ package com.example.doctors.ui.doctors
 
 import com.example.doctors.model.Doctor
 import com.example.doctors.model.MyRealmQueries
-import com.example.doctors.ui.login.LoginMVP
-import com.example.doctors.ui.login.helper.LoginHelper
 import io.realm.RealmResults
 
-class DoctorsModel : DoctorsMVP.Model {
+class DoctorsModel(val myRealmQueries: MyRealmQueries) : DoctorsMVP.Model {
 
     override fun fetchAllDoctors(): RealmResults<Doctor>? {
-        return MyRealmQueries.fetchAllDoctors()
+        return myRealmQueries.fetchAllDoctors()
     }
 
-    override  fun clearDoctors(){
-        MyRealmQueries.clearDoctors()
+    override  fun clearDoctors(): Boolean{
+        return myRealmQueries.clearDoctors()
     }
 }

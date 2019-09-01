@@ -1,6 +1,7 @@
 package com.example.doctors.root
 
 import com.example.doctors.MyApplication
+import com.example.doctors.model.MyRealmQueries
 import com.example.doctors.network.RestApi
 import dagger.Module
 import dagger.Provides
@@ -16,12 +17,18 @@ class ApplicationModule(var application: MyApplication) {
         return this.application
     }
 
-    //Inject a context of the application.
+    //Inject a RestApi
     @Provides
     @Singleton
     fun provideRestApi(): RestApi {
         return RestApi()
     }
 
+    //Inject a RestApi
+    @Provides
+    @Singleton
+    fun provideMyRealmQueries(): MyRealmQueries  {
+        return MyRealmQueries()
+    }
 
 }

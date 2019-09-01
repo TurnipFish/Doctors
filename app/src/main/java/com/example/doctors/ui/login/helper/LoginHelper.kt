@@ -14,17 +14,17 @@ import com.example.doctors.util.general.DataFetchHelper
 import com.google.android.material.snackbar.Snackbar
 
 class LoginHelper(val downloader: ITokenDownloaderService,
-                                 val application: MyApplication,
-                  val restApi: RestApi) : DataFetchHelper(), ILoginHelper {
+                               val application: MyApplication,
+                              val restApi: RestApi,
+                               var mHandler: Handler) : DataFetchHelper(), ILoginHelper {
+    var check: Boolean = true
 
+    inner class Runner(val response: Int) : Runnable{
 
-
-    val mHandler = @SuppressLint("HandlerLeak") object : Handler(){
-        override fun handleMessage(msg: Message?) {
-            super.handleMessage(msg)
-            val check = checkStatusCode(msg?.arg1)
+        override fun run() {
+            check = checkStatusCode(response)
             if ( check){
-               startNewActivity<LoginActivity, DoctorsActivity>(DoctorsActivity::class.java)
+                startNewActivity<LoginActivity, DoctorsActivity>(DoctorsActivity::class.java)
 
             } else {
                 ctx?.let{
@@ -34,9 +34,9 @@ class LoginHelper(val downloader: ITokenDownloaderService,
             }
         }
     }
-//===============================================End Handlers==============================================//
 
+//===============================================End Handlers==============================================//
     override fun login(email: String, password: String) {
-            restApi.generateObservableStreamForAuthentication(application, mHandler, downloader, email, password)
+            restApi.generateObservableStreamForAuthentication(this, application, mHandler, downloader, email, password)
     }
 }

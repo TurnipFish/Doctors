@@ -15,6 +15,8 @@ import  io.reactivex.functions.Function
 import com.example.doctors.model.Doctor
 import com.example.doctors.model.apiObjects.DoctorsSearch
 import com.example.doctors.model.apiObjects.ApiDoctor
+import com.example.doctors.ui.doctors.helper.DoctorsHelper
+import com.example.doctors.ui.login.helper.LoginHelper
 import com.example.doctors.util.data.MyContentDataSource
 import io.reactivex.ObservableSource
 import io.realm.Realm
@@ -33,6 +35,7 @@ class RestApi {
      * @param password - user password
      */
     fun generateObservableStreamForAuthentication(
+        loginHelper:  LoginHelper,
         application: MyApplication,
         mHandler: Handler,
         iService: ITokenDownloaderService,
@@ -45,10 +48,11 @@ class RestApi {
             password
         )
 
-        observableStreamerSubscriber(application, mHandler, observable)
+        observableStreamerSubscriber(loginHelper, application, mHandler, observable )
     }
 
     fun observableStreamerSubscriber(
+        loginHelper:  LoginHelper,
         application: MyApplication,
         mHandler: Handler,
         observable: Observable<Authentication>
@@ -65,10 +69,14 @@ class RestApi {
                             Timber.i("Authentication process ended! ")
                             when (success) {
                                 true -> {
-                                    sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_OK)
+                                    val runner = loginHelper.Runner(MyContentDataSource.NETWORK_STATUS_OK)
+                                    mHandler.postDelayed(runner, 10L)
+                                //    sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_OK)
                                 }
                                 false -> {
-                                    sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_ERROR)
+                                    val runner = loginHelper.Runner(MyContentDataSource.NETWORK_STATUS_ERROR)
+                                    mHandler.postDelayed(runner, 10L)
+                               //     sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_ERROR)
                                 }
                             }
                         }
@@ -81,15 +89,16 @@ class RestApi {
                         }
 
                         override fun onError(e: Throwable) {
-                            Timber.e(
-                                "Fail to subscribe to flowable  with message:  <%s> ",
-                                e.message
-                            )
+                            Timber.e("Fail to subscribe to flowable  with message:  <%s> ",  e.message)
+                            val runner = loginHelper.Runner(MyContentDataSource.NETWORK_STATUS_ERROR)
+                            mHandler.postDelayed(runner, 10L)
                         }
                     })
             }
         } catch (e: Exception) {
             Timber.e("Fail to subscribe to flowable with message:  <%s> ", e.printStackTrace())
+            val runner = loginHelper.Runner(MyContentDataSource.NETWORK_STATUS_ERROR)
+            mHandler.postDelayed(runner, 10L)
         }
     }
 
@@ -102,7 +111,7 @@ class RestApi {
      * @param search - ApiDoctor name
      * @param location - location at the center of a circle in which search is  conducted
      */
-    fun generateObservableStreamForDoctors(
+    fun generateObservableStreamForDoctors(doctorsHelper: DoctorsHelper,
         application: MyApplication, mHandler: Handler, iService: IContentDownloaderService,
         search: String?, location: String?) {
 
@@ -124,9 +133,7 @@ class RestApi {
                 }
             })
 
-
-        //subscriberToLastKeyObservable(application, mHandler, observable)
-        subscriberToDoctorsObservable(application, mHandler, doctorsObservable)
+        subscriberToDoctorsObservable(doctorsHelper, application, mHandler, doctorsObservable)
     }
 
     /**
@@ -136,6 +143,7 @@ class RestApi {
      * @Param observable - emitter of ApiDoctor objects
      */
     fun subscriberToDoctorsObservable(
+        doctorsHelper: DoctorsHelper,
         application: MyApplication,
         mHandler: Handler,
         observable: Observable<ApiDoctor>
@@ -150,7 +158,9 @@ class RestApi {
 
                         override fun onComplete() {
                             Timber.i("Authentication process ended! ")
-                            sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_OK)
+                            val runner = doctorsHelper.Runner(MyContentDataSource.NETWORK_STATUS_OK)
+                            mHandler.postDelayed(runner, 10L)
+                           // sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_OK)
                         }
 
                         override fun onNext(apiDoctor: ApiDoctor) {
@@ -165,7 +175,9 @@ class RestApi {
             }
         } catch (e: Exception) {
             Timber.e("Fail to subscribe to Observable with message:  <%s> ", e.printStackTrace())
-            sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_ERROR)
+            val runner = doctorsHelper.Runner(MyContentDataSource.NETWORK_STATUS_OK)
+            mHandler.postDelayed(runner, 10L)
+           // sendMessage(mHandler, MyContentDataSource.NETWORK_STATUS_ERROR)
         }
     }
 

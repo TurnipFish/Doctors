@@ -13,7 +13,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.doctors.DoctorsActivity">
+        <activity android:name=".ui.doctors.DoctorsActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
+                android:windowSoftInputMode="adjustPan"
+                android:resizeableActivity="true">
 
         </activity>
         <activity

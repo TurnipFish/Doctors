@@ -1,6 +1,6 @@
 <resources>
         <dimen name="fab_margin">16dp</dimen>
-
+        <dimen name="margin_top_extra_large">100dp</dimen>
         <dimen name="margin_top_large">54dp</dimen>
         <dimen name="margin_top_bottom_high">24dp</dimen>
         <dimen name="margin_top_bottom">16dp</dimen>

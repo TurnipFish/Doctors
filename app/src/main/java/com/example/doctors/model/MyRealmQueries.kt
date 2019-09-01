@@ -4,7 +4,10 @@ import io.realm.Realm
 import io.realm.RealmResults
 import timber.log.Timber
 
-object MyRealmQueries {
+/**
+ *  class for executing realm quereis and mutations
+ */
+class MyRealmQueries {
 
     /**
      * Retrieves all search results from Realm
@@ -32,8 +35,9 @@ object MyRealmQueries {
      * Remove all search results from Realm Doctors object
      *
      */
-    fun clearDoctors() {
+    fun clearDoctors(): Boolean {
         val realm : Realm = Realm.getDefaultInstance()
+        var result = true
         lateinit var doctors : RealmResults<Doctor>
         try {
             realm.executeTransaction {
@@ -42,9 +46,11 @@ object MyRealmQueries {
         }catch (e: Exception) {
             e.printStackTrace()
             Timber.e("Failed to remove Doctors from Realm ${e.message}")
+            result =  false
         } finally {
             realm.close()
         }
+        return result
 
     }
 }

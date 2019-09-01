@@ -45,7 +45,7 @@ class DoctorsAdapter  (val context: Context,  val data: ArrayList<Doctor>, val p
 
         fun setValues(doctor: Doctor) {
             name.text = doctor.getName()
-            address.text = doctor.getName()
+            address.text = setAddressText(doctor.getName())
             orderTeaserCover()
 
             //Doctor cover  image
@@ -72,6 +72,41 @@ class DoctorsAdapter  (val context: Context,  val data: ArrayList<Doctor>, val p
             val horizontalPadding = (elevation + (1 - cos45) * radius)
             return horizontalPadding
 
+        }
+
+        /**
+         * derive a two lines string at most
+         * @param address - abstract string
+         * @return a string ending with a full word
+         */
+        private fun setAddressText(address: String?): String{
+            var newAddress = ""
+            address?.let{
+                val length = address.length
+                if (length > MyContentDataSource.MAX_ADDRESS_LENGTH) {
+                    val tmpStr = address.substring(0, MyContentDataSource.MAX_ADDRESS_LENGTH)
+                    newAddress = findFirstSpace(tmpStr)
+                    return newAddress
+                }
+                return address   //shorter than MAX_ABSTRACT_SIZE
+            }
+            return ""
+        }
+
+        /**
+         * locate the first space to prevent fragments of words
+         * @param tmpStr - input string
+         * @return a string ending with a full word
+         */
+        private fun findFirstSpace(tmpStr: String): String{
+            val len = tmpStr.length
+            var ch: Char = tmpStr[len - 1]
+            var count = 0
+            while (ch != ' '){
+                count++
+                ch = tmpStr[len - 1 - count]
+            }
+            return String.format("%s%s",tmpStr.substring(0, len - count), "...")
         }
     }
 }

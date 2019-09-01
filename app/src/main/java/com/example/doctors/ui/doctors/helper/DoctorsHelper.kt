@@ -8,24 +8,26 @@ import com.example.doctors.MyApplication
 import com.example.doctors.network.IContentDownloaderService
 import com.example.doctors.network.RestApi
 import com.example.doctors.ui.doctors.DoctorsActivity
+import com.example.doctors.ui.login.LoginActivity
 import com.example.doctors.util.general.DataFetchHelper
 import com.google.android.material.snackbar.Snackbar
 
 class DoctorsHelper(val application: MyApplication,
                                   val downloader: IContentDownloaderService,
-                                  val restApi: RestApi) : DataFetchHelper(), IDoctorsHelper {
+                                  val restApi: RestApi,
+                                  var mHandler: Handler) : DataFetchHelper(), IDoctorsHelper {
+    var check: Boolean = true
+    inner class Runner(val response: Int) : Runnable{
 
-    val mHandler = @SuppressLint("HandlerLeak") object : Handler(){
-        override fun handleMessage(msg: Message?) {
-            super.handleMessage(msg)
-            val check = checkStatusCode(msg?.arg1)
-            (ctx as DoctorsActivity).swipeRefresh.isRefreshing = false      //reset swipe refreshing
+        override fun run() {
+            check = checkStatusCode(response)
+            (ctx as DoctorsActivity?)?.swipeRefresh?.isRefreshing = false      //reset swipe refreshing
             if ( check){
-                (ctx as DoctorsActivity).initRecyclerView()
+                (ctx as DoctorsActivity?)?.initRecyclerView()
             } else {
                 ctx?.let{
                     showDialog(it.resources.getString(R.string.doctors_header),
-                                        it.resources.getString(R.string.doctors_fetch_content_error))
+                        it.resources.getString(R.string.doctors_fetch_content_error))
                 }
             }
         }
@@ -39,7 +41,7 @@ class DoctorsHelper(val application: MyApplication,
      * @param location - The center of the  area to search in
      */
     override fun fetchDoctors(search: String?, location: String?){
-        restApi.generateObservableStreamForDoctors(application, mHandler, downloader, search, location)
+        restApi.generateObservableStreamForDoctors(this, application, mHandler, downloader, search, location)
     }
 
 }
