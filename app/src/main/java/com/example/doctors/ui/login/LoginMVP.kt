@@ -9,7 +9,8 @@ interface LoginMVP {
     }
 
     interface Presenter {
-        fun setPresenterView(view : View)
+        fun setPresenterView( view: LoginMVP.LoginView)
+        fun checkCredentials(userName: String, password: String): Boolean
         fun login(email: String, password: String)
 
 

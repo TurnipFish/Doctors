@@ -14,7 +14,8 @@ import com.example.doctors.util.general.DataFetchHelper
 import com.google.android.material.snackbar.Snackbar
 
 class LoginHelper(val downloader: ITokenDownloaderService,
-                                 val application: MyApplication) : DataFetchHelper(), ILoginHelper {
+                                 val application: MyApplication,
+                  val restApi: RestApi) : DataFetchHelper(), ILoginHelper {
 
 
 
@@ -36,6 +37,6 @@ class LoginHelper(val downloader: ITokenDownloaderService,
 //===============================================End Handlers==============================================//
 
     override fun login(email: String, password: String) {
-            RestApi.generateObservableStreamForAuthentication(application, mHandler, downloader, email, password)
+            restApi.generateObservableStreamForAuthentication(application, mHandler, downloader, email, password)
     }
 }

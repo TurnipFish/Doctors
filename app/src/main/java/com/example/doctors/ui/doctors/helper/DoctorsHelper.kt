@@ -12,7 +12,8 @@ import com.example.doctors.util.general.DataFetchHelper
 import com.google.android.material.snackbar.Snackbar
 
 class DoctorsHelper(val application: MyApplication,
-                                    val downloader: IContentDownloaderService) : DataFetchHelper(), IDoctorsHelper {
+                                  val downloader: IContentDownloaderService,
+                                  val restApi: RestApi) : DataFetchHelper(), IDoctorsHelper {
 
     val mHandler = @SuppressLint("HandlerLeak") object : Handler(){
         override fun handleMessage(msg: Message?) {
@@ -38,7 +39,7 @@ class DoctorsHelper(val application: MyApplication,
      * @param location - The center of the  area to search in
      */
     override fun fetchDoctors(search: String?, location: String?){
-        RestApi.generateObservableStreamForDoctors(application, mHandler, downloader, search, location)
+        restApi.generateObservableStreamForDoctors(application, mHandler, downloader, search, location)
     }
 
 }

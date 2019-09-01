@@ -2,6 +2,7 @@ package com.example.doctors.ui.login
 
 import com.example.doctors.MyApplication
 import com.example.doctors.network.ITokenDownloaderService
+import com.example.doctors.network.RestApi
 import com.example.doctors.ui.login.helper.LoginHelper
 import dagger.Module
 import dagger.Provides
@@ -24,7 +25,9 @@ class LoginModule() {
 
     @LoginScope
     @Provides
-    fun provideLoginHelper(downloader: ITokenDownloaderService, application: MyApplication ) : LoginHelper {
-        return LoginHelper(downloader, application)
+    fun provideLoginHelper(downloader: ITokenDownloaderService,
+                           application: MyApplication,
+                           restApi: RestApi) : LoginHelper {
+        return LoginHelper(downloader, application, restApi)
     }
 }

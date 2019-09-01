@@ -19,7 +19,7 @@ import com.example.doctors.util.data.MyContentDataSource
 import io.reactivex.ObservableSource
 import io.realm.Realm
 
-object RestApi {
+class RestApi {
     var success: Boolean = false
     var recordsCounter: Int = 0
     var dataFetchSuccess: Boolean = true

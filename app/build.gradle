@@ -188,10 +188,13 @@ dependencies {
     //CardView
     implementation 'androidx.cardview:cardview:1.0.0'
 
-
+    //Unit Tests
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0'
+    testImplementation 'org.mockito:mockito-core:2.27.0'
+    testImplementation 'org.mockito:mockito-inline:2.27.0'
 
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'

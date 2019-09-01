@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
         <string name="app_name">Code Challenge</string>
         <string name="action_settings">Settings</string>
+        <!--General-->
+        <string name="network.offline" tools:ignore="ExtraTranslation">Please check your connection</string>
 
         <!-- Login-->
         <string name="auth.name" tools:ignore="ExtraTranslation">Login</string>

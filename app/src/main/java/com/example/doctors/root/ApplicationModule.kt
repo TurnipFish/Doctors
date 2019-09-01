@@ -1,6 +1,7 @@
 package com.example.doctors.root
 
 import com.example.doctors.MyApplication
+import com.example.doctors.network.RestApi
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -13,6 +14,13 @@ class ApplicationModule(var application: MyApplication) {
     @Singleton
     fun provideContext(): MyApplication {
         return this.application
+    }
+
+    //Inject a context of the application.
+    @Provides
+    @Singleton
+    fun provideRestApi(): RestApi {
+        return RestApi()
     }
 
 

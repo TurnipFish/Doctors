@@ -168,6 +168,7 @@ class DoctorsActivity : DoctorsDagger(), DoctorsMVP.DoctorsView {
         WindowUtils.hideSoftKey(header)
         doctors_recycler_view.adapter = null
         doctorsPresenter.clearDoctors()
+        dynamicArray.clear()
     }
 
 }

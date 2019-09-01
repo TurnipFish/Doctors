@@ -2,6 +2,7 @@ package com.example.doctors.ui.doctors
 
 import com.example.doctors.MyApplication
 import com.example.doctors.network.IContentDownloaderService
+import com.example.doctors.network.RestApi
 import com.example.doctors.ui.doctors.helper.DoctorsHelper
 import com.example.doctors.util.preferences.MyPreferencesHelper
 import com.squareup.picasso.OkHttp3Downloader
@@ -29,8 +30,8 @@ class DoctorsModule(val application: MyApplication) {
 
     @DoctorsScope
     @Provides
-    fun provideDoctorsHelper(application: MyApplication, downloader: IContentDownloaderService   ) : DoctorsHelper {
-        return DoctorsHelper(application, downloader )
+    fun provideDoctorsHelper(application: MyApplication, downloader: IContentDownloaderService, restApi: RestApi   ) : DoctorsHelper {
+        return DoctorsHelper(application, downloader, restApi )
     }
 
     @DoctorsScope
