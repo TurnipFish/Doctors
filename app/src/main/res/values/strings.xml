@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+        <string name="app_name">Code Challenge</string>
+        <string name="action_settings">Settings</string>
+        <!--General-->
+        <string name="network.offline" tools:ignore="ExtraTranslation">Please check your connection</string>
+
+        <!-- Login-->
+        <string name="auth.name" tools:ignore="ExtraTranslation">Login</string>
+        <string name="auth.email" tools:ignore="ExtraTranslation">Email</string>
+        <string name="auth.password" tools:ignore="ExtraTranslation">Password</string>
+        <string name="auth.signin" tools:ignore="ExtraTranslation">Sign In</string>
+        <string name="auth.header" tools:ignore="ExtraTranslation">Authentication Failed</string>
+        <string name="auth.message" tools:ignore="ExtraTranslation">Wrong credentials</string>
+        <string name="auth.login_error" tools:ignore="ExtraTranslation">Couldn\'t sign in, please try later</string>
+        <!--Doctors-->
+        <string name="doctors.name" tools:ignore="ExtraTranslation">Doctors</string>
+        <string name="title_activity_doctors">DoctorsActivity</string>
+        <string name="search_topic">Name / Location</string>
+        <string name="doctors.header" tools:ignore="ExtraTranslation">Data Fetching Failed</string>
+        <string name="doctors.fetch_content_error" tools:ignore="ExtraTranslation">Failed to fetch Doctors from API</string>
+
+        <!--Custom Dialog-->
+        <string name="ok" tools:ignore="ExtraTranslation">Ok</string>
+
+</resources>

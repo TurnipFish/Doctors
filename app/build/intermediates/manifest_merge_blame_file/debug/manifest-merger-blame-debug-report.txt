@@ -1,0 +1,81 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.doctors"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:6:22-76
+13
+14    <application
+14-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:8:5-32:19
+15        android:name="com.example.doctors.MyApplication"
+15-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:9:13-41
+16        android:allowBackup="true"
+16-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:10:13-39
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.1.0-rc02] C:\Users\ProdigaLsON7\.gradle\caches\transforms-2\files-2.1\3ba6b8543154370bf8af2b567ad021b3\core-1.1.0-rc02\AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:icon="@mipmap/ic_code_challenge"
+19-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:11:13-53
+20        android:label="@string/app_name"
+20-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:12:13-45
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:13:13-58
+22        android:supportsRtl="true"
+22-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:14:13-39
+23        android:testOnly="true"
+24        android:theme="@style/AppTheme" >
+24-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:15:13-44
+25        <activity
+25-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:16:9-21:20
+26            android:name="com.example.doctors.ui.doctors.DoctorsActivity"
+26-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:16:19-61
+27            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
+27-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:17:17-110
+28            android:resizeableActivity="true"
+28-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:19:17-50
+29            android:windowSoftInputMode="adjustPan" >
+29-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:18:17-56
+30        </activity>
+31        <activity
+31-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:22:9-31:20
+32            android:name="com.example.doctors.ui.login.LoginActivity"
+32-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:23:17-55
+33            android:label="@string/app_name"
+33-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:24:17-49
+34            android:theme="@style/AppTheme.NoActionBar" >
+34-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:25:17-60
+35            <intent-filter>
+35-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:26:13-30:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:27:17-69
+36-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:27:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:29:17-77
+38-->C:\Users\ProdigaLsON7\Documents\Doctors\Doctors\app\src\main\AndroidManifest.xml:29:27-74
+39            </intent-filter>
+40        </activity>
+41
+42        <provider
+42-->[com.squareup.picasso:picasso:2.71828] C:\Users\ProdigaLsON7\.gradle\caches\transforms-2\files-2.1\694dcd653bd1aceb5e1066590f23287b\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+43            android:name="com.squareup.picasso.PicassoProvider"
+43-->[com.squareup.picasso:picasso:2.71828] C:\Users\ProdigaLsON7\.gradle\caches\transforms-2\files-2.1\694dcd653bd1aceb5e1066590f23287b\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+44            android:authorities="com.example.doctors.com.squareup.picasso"
+44-->[com.squareup.picasso:picasso:2.71828] C:\Users\ProdigaLsON7\.gradle\caches\transforms-2\files-2.1\694dcd653bd1aceb5e1066590f23287b\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+45            android:exported="false" />
+45-->[com.squareup.picasso:picasso:2.71828] C:\Users\ProdigaLsON7\.gradle\caches\transforms-2\files-2.1\694dcd653bd1aceb5e1066590f23287b\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+46    </application>
+47
+48</manifest>
